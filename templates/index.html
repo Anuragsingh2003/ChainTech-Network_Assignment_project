@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>My Web Page</title>
+</head>
+<body>
+    <header>
+        <h1>My Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="/admin/">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <center> <h2>Welcome to my website!</h2></center>
+            <p></p>
+        </section>
+
+        <section>
+            <h2>Dynamic Content <a href="/" onclick="alert('Queate_changed');">click here<></a></h2>
+            <p style="color:steelblue;" id="dynamic-content"></p>
+            <marquee width="60%" direction="right" height="100px">
+                Queate: <p style="color:red;" id="dynamic-content1">{{ dynamic_content }}</p>
+        </section>
+        
+    </marquee>
+
+        <section>
+            <h2>User Data Form</h2>
+            <form id="user-form" action="{% url 'submit' %}" method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit" onclick="alert('form submitted!');">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact Information: example@email.com</p>
+    </footer>
+
+    {% comment %} <script src="{% static 'script.js' %}"></script> {% endcomment %}
+</body>
+</html>

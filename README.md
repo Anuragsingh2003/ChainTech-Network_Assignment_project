@@ -14,3 +14,39 @@ python manage.py makemigrations
 python manage.py migrate
 
 python manage.py runserver
+
+
+your-django-project/
+├── myproject/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── myapp/
+│   ├── migrations/
+│   │   ├── __init__.py
+│   ├── static/
+│   │   └── css/
+│   │       └── style.css
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── confirmation.html
+│   │   └── index.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── static/
+│   └── css/
+│       └── style.css
+├── templates/
+│   ├── base.html
+│   ├── confirmation.html
+│   └── index.html
+├── manage.py
+├── requirements.txt
+└── README.md
